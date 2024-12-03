@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Family Webpage</title>
+  <link rel="icon" type="logo" href="MyImages/familyicon.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial;
+      padding: 10px;
+      background: #f5e1e1;
+    }
+    .header {
+      padding: 30px;
+      text-align: center;
+      background: #9b1b30;
+    }
+    .header h1 {
+      font-size: 50px;
+      color: white;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #9b1b30;
+    }
+    .topnav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .topnav a:hover {
+      background-color: #f5e1e1;
+      color: black;
+    }
+    .leftcolumn {
+      float: left;
+      width: 50%;
+      padding: 20px;
+    }
+    .rightcolumn {
+      float: left;
+      width: 50%;
+      padding: 20px;
+    }
+    .card {
+      background-color: #7c1c25;
+      color: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    .row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+        @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .flex-container {
+      display: flex;
+      align-items: center;
+    }
+    .flex-container img {
+      width: 200px;
+      height: auto;
+      margin-right: 20px;
+    }
+    .flex-container div {
+      max-width: 600px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    @media screen and (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media screen and (max-width: 400px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>My Family, My Home</h1>
+    <p style="color: white;">The story of my family and the chaos in the house.</p>
+  </div>
+
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>This is my family</h2>
+        <h5>A little glimpse into who they are and why I am so grateful to be part of this family</h5>
+        <img src="MyImages/family.jpg" alt="My Family Picture">
+        <p>This picture was taken on Eid this year, 2024</p>
+        <p>My family consists of five people, including me, and I am the oldest sibling to two younger sisters. Both of my parents love traveling, so we often go on trips together as a family. My siblings are 16 and 8 years old, and they are opposites of each other—one is quiet, and the other is reckless. Despite this, I enjoy having them around (not that I would like to admit it).</p>
+      </div>
+
+      <div class="card">
+        <h2>Favourite picture of my family</h2>
+        <h5>A photo of my family that brings me joy every time I see it.</h5>
+        <img src="MyImages/family2.jpg" alt="Favourite Image of my Family">
+        <p>This picture was taken last year at Sekinchan Padi Sentral Homestay.</p>
+        <p>My family loves to travel here and there, so we have many family pictures together. This picture is very beautiful because we took it at night, and there was no one else at that time, which makes me like it even more. I don't usually enjoy taking pictures in public because it gets very crowded.</p>
+      </div>
+    </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Me and My Sisters</h3>
+        <div class="flex-container">
+          <img src="MyImages/family3.jpg" alt="My Siblings' Picture">
+          <div>
+            <h4>About Me and My Sisters</h4>
+            <p>I have two younger sisters and we are all girls, so we always have girl's nights. We spend time together playing games or teaching our little sister how to write. Our presence is very important to our youngest sister because there is a big age gap between us, and she doesn't have friends her age to play with.</p>
+            <p>Although there are always many fights between us, starting from pulling each other's hair to stealing each other's things, we are always there for each other. I am grateful to have them in my life because they are the ones who always brighten the atmosphere at home.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Doa Ibu Bapa</h3>
+        <audio controls>
+          <source src="MyAudios/doa-ibu-bapa.mp3" type="audio/mp3"/>
+          Your browser does not support the audio element.
+        </audio>
+        <p>Always recite prayers for our parents every day because <br>they have taken good care of us, and this prayer is our gift to them.</p>
+      </div>
+
+      <div class="card">
+        <h2>Cats Photo Gallery</h2>
+        <h4>Collections of these cute cats that have visited my house <br> because they are my family too.</h4>
+        <div class="gallery">
+          <img src="MyImages/cat1.jpg" alt="Cat image 1">
+          <img src="MyImages/cat2.jpg" alt="Cat image 2">
+          <img src="MyImages/cat3.jpg" alt="Cat image 3">
+          <img src="MyImages/cat4.jpg" alt="Cat image 4">
+          <img src="MyImages/cat5.jpg" alt="Cat image 5">
+          <img src="MyImages/cat6.jpg" alt="Cat image 6">
+          <img src="MyImages/cat7.jpg" alt="Cat image 7">
+          <img src="MyImages/cat8.jpg" alt="Cat image 8">
+          <img src="MyImages/cat9.jpg" alt="Cat image 9">
+          <img src="MyImages/cat10.jpg" alt="Cat image 10">
+          <img src="MyImages/cat11.jpg" alt="Cat image 11">
+          <img src="MyImages/cat12.jpg" alt="Cat image 12">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+   <p>&#169; 2024 Najiha. All rights reserved v<sub>1</sub>.</p>
+  </div>
+
+</body>
+</html>

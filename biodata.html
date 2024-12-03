@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Biodata Webpage</title>
+  <link rel="icon" type="logo" href="MyImages/biodataicon.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-color: #D9B6B0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #4B1F21;
+    }
+
+     footer {
+      background-color: #9b1b30;
+      color: #f5ebe0;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin: 0;
+    }   
+    header {
+      background-image: url('MyImages/longpic.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 50px;
+      text-align: center;
+      color: white;
+      font-size: 60px;
+    }
+
+    nav {
+      background-color: #9E2A2F;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #D91D26;
+    }
+
+    .card-container {
+      perspective: 900px;
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+
+    .flip-card {
+      width: 300px;
+      height: 500px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      margin-left: 20px;
+    }
+
+    .flip-card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background-image: url('MyImages/flipme.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .flip-card-back {
+      background-color: #E8D3C9; 
+      color: #4B1F21;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      text-align: center;
+      padding: 0;
+      transform: rotateY(180deg);
+    }
+
+    section {
+      margin: 20px;
+      display: flex;
+    }
+
+    aside {
+      width: 30%;
+      background-color: #F4D4D0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    article {
+      width: 70%;
+      background-color: #F9C7C2;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      background-color: #9E2A2F;
+      color: white;
+      border-collapse: collapse;
+    }
+
+    table td {
+      padding: 20px;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    table img {
+      width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+      transform: translateY(-30px);
+      transition: transform 0.3s ease;
+    }
+
+    table img:hover {
+      transform: translateY(-50px);
+    }
+
+    
+    .audio-comment {
+      display: none;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #4B1F21;
+    }
+
+    audio {
+      cursor: pointer;
+    }
+
+    audio:focus + .audio-comment {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        flex-direction: column;
+      }
+     aside, article {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience</a>
+    <a href="family.html">Family</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <header>
+    <h2>Biodata</h2>
+  </header>
+
+  <section>
+    <aside>
+      <h2>My Favourite Song</h2>
+      <h3>Top <sup>3</sup> Favourite Songs</h3>
+      <h4>Line Without a Hook</h4>
+      <audio controls>
+        <source src="MyAudios/Line Without a Hook.mp3" type="audio/mp3"/>
+      </audio>
+      <div class="audio-comment">Fun fact, I was inspired to write my english essay during the <abbr title="Sijil Pelajaran Malaysia">SPM</abbr> paper using this song!</div>
+
+      <h4>Apple</h4>
+      <audio controls>
+        <source src="MyAudios/Apple.mp3" type="audio/mp3"/>
+      </audio>
+      <div class="audio-comment">I love Gfriend's song so much and I'm really excited for their comeback on 18<sup>th</sup> January 2025 after they disbanded four years ago.</div>
+
+      <h4>Igloo</h4>
+      <audio controls>
+        <source src="MyAudios/Igloo.mp3" type="audio/mp3"/>
+      </audio>
+      <div class="audio-comment">This song is a total vibe with the downside being too short for a bop!</div>
+    </aside>
+
+    <article>
+      <table>
+        <tr align="center">
+          <td colspan="3" style="font-weight: bold;">Biodata</td>
+        </tr>
+        <tr>
+          <td>Full Name</td>
+          <td>: Najiha binti Nur Azmi</td>
+          <td rowspan="6"><img src="MyImages/me.jpg" alt="Picture of me"></td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td>: 31/12/2004</td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>: 20</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>: Female</td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>: 01163435330</td>
+        </tr>
+        <tr>
+          <td>University Name</td>
+          <td>: Universiti Teknologi MARA Cawangan Kampus Segamat</td>
+        </tr>
+      </table>
+    </article>
+
+    <div class="card-container">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"></div>
+          <div class="flip-card-back">
+            <p><pre>Hi! I'm Najiha, a diploma student <br> in Information Management, passionate <br> about writing stories, food hunting, <br> and creating memories by making videos <br> throughout my journey in life.Since <br> middle school, I have always <br> been fascinated by editing <br> and making videos about <br> my memories but I haven't <br> got the chance to do <br> so until now in my <br> campus journey.Fact about <br> me is that I really <br> enjoy reading, writing stories, <br> and love spending my alone <br> time to level up <br> myself for the future.</pre></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&#169; 2024 Najiha. All rights reserved v<sub>1</sub>.</p>
+  </footer>
+
+</body>
+</html>

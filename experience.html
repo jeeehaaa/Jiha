@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Experience Webpage</title>
+    <link rel="icon" type="image/png" href="MyImages/expicon.jpeg">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding-bottom: 40px;
+            background: #f1e1d0;
+            color: #5f2a3e;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: relative;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            height: 350px;
+            overflow: hidden;
+            background: linear-gradient(45deg, #B07B80, #5F2A3E);
+            animation: gradientAnimation 4s ease infinite, moveBackground 3s ease infinite;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            animation: bounceIn 2s ease-out infinite;
+        }
+
+        .header p {
+            font-size: 1.5em;
+            animation: slideUp 2s ease-out infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(45deg, #B07B80, #5F2A3E);
+            }
+            50% {
+                background: linear-gradient(45deg, #F1D2C1, #5F2A3E);
+            }
+            100% {
+                background: linear-gradient(45deg, #B07B80, #5F2A3E);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(15px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #5F2A3E;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a:nth-child(6) {
+            float: right;
+        }
+
+        .loading-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .notification {
+           display: none;
+           position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           background-color: #4CAF50;
+           color: white;
+           padding: 20px;
+           border-radius: 8px;
+           text-align: center;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+           z-index: 2000;
+    }
+
+    .notification button {
+        background-color: #f1f1f1;
+        color: #5f2a3e;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .notification button:hover {
+        background-color: #ddd;
+    }
+
+        .cat {
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+        }
+
+        .cat img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-30px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+
+        .cat-animate {
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .cat:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .cat:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .cat:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .cat:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .cat:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .floating-boxes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 30%;
+            padding: 20px;
+            background-color: #F1D2C1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .timeline-item {
+            width: 30%;
+            padding: 20px;
+            background-color: #F1D2C1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(odd) {
+            background-color: #B07B80;
+        }
+
+        .timeline-heading {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul.custom-bullets {
+            list-style: none; 
+            padding-left: 20px; 
+        }
+
+        ul.custom-bullets li {
+            position: relative;
+            padding-left: 30px; 
+        }
+
+        ul.custom-bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px; 
+            background-image: url('MyVideos/gifcat.gif'); 
+            background-size: cover;
+       }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+            animation: floatImage 5s ease-in-out infinite;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .image-gallery img:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .video-section video {
+            width: 30%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: #B07B80;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @keyframes floatImage {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="header">
+        <h1>My Experience Journey</h1>
+        <p>A small sharing on <mark>my experience in the internship</mark> I had last semester.</p>
+    </div>
+
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="experience.html#Media" id="media-link" style="float:right">Media</a>
+    </div>
+
+    <div class="loading-container" id="loading-container">
+        <div class="cat cat-animate" id="cat1"><img src="MyImages/load1.jpg" alt="cat image 1"></div>
+        <div class="cat cat-animate" id="cat2"><img src="MyImages/load2.jpg" alt="cat image 2"></div>
+        <div class="cat cat-animate" id="cat3"><img src="MyImages/load3.jpg" alt="cat image 3"></div>
+        <div class="cat cat-animate" id="cat4"><img src="MyImages/load4.jpg" alt="cat image 4"></div>
+        <div class="cat cat-animate" id="cat5"><img src="MyImages/load5.jpg" alt="cat image 5"></div>
+    </div>
+
+    <div class="floating-boxes">
+        <div class="box">
+            <h2>Week 1 - Week 2</h2>
+            <ol type="A">
+                <li>Receive a tracing list at the counter</li>
+                <li>Write down information in trace cards</li>
+                <li>Replace records temporarily with the trace cards</li>
+            </ol>
+        </div>
+        <div class="box">
+            <h2>Week 3 - Week 4</h2>
+            <ul>
+                <li><b>Preparing completed medical reports</b></li>
+                <ul>
+                    <li>Detach all pages in the form and separate the payment receipt</li>
+                    <li>Do a photocopy and scan the medical report</li>
+                    <li>Prepare medical reports in envelopes</li>
+                </ul>
+            </ul>
+        </div>
+      <div class="box">
+    <h2 style="color: #5f2a3e">Week 5 - Week 6</h2>
+    <h4 style="color: #5f2a3e">Daily Ward Census</h4>
+        <ul class="custom-bullets">
+        <li>Get the total of every data from <abbr title="UniMEDS">Hospital Information System</abbr></li>
+        <li>Key in the data into Excel to be a statistic.</li>
+        </ul>
+     </div>
+</div>
+
+    </div>
+
+    <div class="timeline-heading">
+        <h3>Timeline of Tasks in the Internship</h3>
+    </div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Medical Record Unit</h3>
+            <p>This department is in charge of managing digital medical records and patient files. They control the setup and upkeep of electronic medical record systems and ensure that physical records are correctly arranged, stored, and accessible.</p>
+            <h4>Week 1 - Week 2</h4>
+        </div>
+        <div class="timeline-item">
+            <h3>Medical Report Unit</h3>
+            <p>This unit is in charge of administering medical reports prepared by healthcare professionals. They make certain that medical reports are delivered on time and accurately to all relevant individuals, such as patients and healthcare professionals.</p>
+            <h4>Week 3 - Week 4</h4>
+        </div>
+        <div class="timeline-item">
+            <h3>Casemix and Statistics</h3>
+            <p>This unit is working on the casemix management, including classification and grouping of patients according to their diagnoses. They also deal with health informatics, which is collecting and analyzing medical data for research purposes, quality improvement tasks, and decision-making.</p>
+            <h4>Week 5 - Week 6</h4>
+        </div>
+    </div>
+
+    <div class="card" id="Media">
+        <div class="image-gallery">
+            <img src="MyImages/intern1.jpg" alt="Intern Image 1">
+            <img src="MyImages/intern2.jpg" alt="Intern Image 2">
+            <img src="MyImages/intern3.jpg" alt="Intern Image 3">
+            <img src="MyImages/intern4.jpg" alt="Intern Image 4">
+            <img src="MyImages/intern5.jpg" alt="Intern Image 5">
+            <img src="MyImages/intern6.jpg" alt="Intern Image 6">
+        </div>
+
+   <div class="notification" id="notification">
+    <p>Loading done</p>
+    <button id="close-notification">Okay</button>
+   </div>
+
+        <div class="video-section">
+            <h2>Watch This Video I Made During My Internship</h2>
+            <video controls>
+                <source src="MyVideos/internvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="footer">
+            <p>&#169; 2024 Najiha. All rights reserved v<sub>1</sub>.</p>
+        </div>
+    </div>
+
+   <script>
+    document.getElementById("media-link").addEventListener("click", function(e) {
+        e.preventDefault();
+        document.getElementById("loading-container").style.display = "flex";
+
+        setTimeout(function() {
+            document.getElementById("loading-container").style.display = "none";
+            document.querySelector("#Media").scrollIntoView({ behavior: 'smooth' });
+            document.getElementById("notification").style.display = "block";
+        }, 2000);
+
+        document.getElementById("close-notification").addEventListener("click", function() {
+            document.getElementById("notification").style.display = "none";
+        });
+    });
+</script>
+
+
+</body>
+</html>

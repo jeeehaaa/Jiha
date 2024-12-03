@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Education Webpage</title>
+    <link rel="icon" type="logo" href="MyImages/edu.jpg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5ebe0; 
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            position: relative;
+            text-align: center;
+            color: #f5ebe0; 
+        }
+
+        .header img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #9b1b30; 
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f5ebe0; 
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: #700f1d; 
+        }
+
+        .section-boxes {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        .box {
+            flex: 1;
+            padding: 20px;
+            background-color: #9b1b30; 
+            color: #f5ebe0; 
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+       .box img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+       }
+
+       .box img:hover {
+            transform: scale(1.2); 
+       }
+
+
+        .box h3 {
+            margin-bottom: 10px;
+        }
+
+        .comparison-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #9b1b30; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+
+        table, th, td {
+            border: 1px solid #9b1b30; 
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #f8ebe8; 
+        }
+
+        th {
+            background-color: #9b1b30; 
+            color: #f5ebe0; 
+        }
+
+        .gallery {
+            text-align: center;
+            margin: 40px auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .gallery h2 {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #f5ebe0; 
+            background-color: #9b1b30; 
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+
+        .gallery img {
+            width: 220px; 
+            height: 220px; 
+            border: 2px solid #9b1b30;
+            border-radius: 50%; 
+            object-fit: cover;
+            transition: transform 0.3s ease; 
+        }
+
+        .gallery img:hover {
+            transform: translateY(-15px); 
+        }
+
+       .video-section {
+           margin: 40px auto;
+           display: flex;
+           align-items: center;
+           justify-content: center; 
+           max-width: 1000px;
+           padding: 30px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+           border-radius: 10px;
+           background-color: #f8ebe8; 
+
+       }
+
+      .video-section .heading {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-right: 20px;
+          text-align: center;
+       }
+
+      .video-section .heading hr {
+          width: 1px;
+          height: 100%;
+          border: 1px solid #9b1b30; 
+          margin-top: 20px;
+       }
+
+      .video-section .heading span {
+          font-size: 1.5em;
+          color: #9b1b30;
+          margin-bottom: 10px;
+       }
+
+       .video-section .videos {
+           display: flex; 
+           gap: 20px; 
+       }
+
+       .video-section video {
+            width: 45%; 
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+       }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="MyImages/loveedu.jpg" alt="Header Image"> 
+    <div class="header-text">
+        <h1>My Education Journey</h1>
+        <p>A small sharing on my education journey from middle school until now.</p>
+    </div>
+</div>
+
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="experience.html">Experience</a>
+    <a href="family.html">Family</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="education.html#Table" style="float:right">Table</a>
+    <a href="education.html#Media" style="float:right">Media</a>
+</div>
+
+<div class="section-boxes">
+    <div class="box">
+        <img src="MyImages/sekrendah.jpeg" alt="Elementary School" usemap="#eleschMap"> 
+        <h3>Elementary School</h3>
+        <h4>Sekolah Kebangsaan Seri Pristana</h4>
+        <p>I always <i>change schools</i> at this <br> time because I have just moved to a new residential area and am looking for a suitable school in the vicinity.</p>
+        <h4>2011 - 2016</h4>
+    </div>
+    <div class="box">
+        <img src="MyImages/sekmen.jpeg" alt="High School" usemap="#highschMap"> 
+        <h3>High School</h3>
+        <h4>SMK Sierramas</h4>
+        <p>This school holds many <i>memories</i> and <i>sweet moments</i> that I remember from my time studying here. I have also joined many tuition classes, especially as the <abbr title="SPM">Sijil Pelajaran Malaysia</abbr> approaches, to achieve the best results and make my parents proud.</p>
+        <h4>2017 - 2022</h4>
+    </div>
+    <div class="box">
+        <img src="MyImages/uni.jpg" alt="University" usemap="#uniMap"> 
+        <h3>University</h3>
+        <h4>University Technology MARA Campus Segamat</h4>
+        <h5>School of Information Science College of Computing,<br>Informatics and Mathematics</h5>
+        <p>I am a <i>Diploma student in my 5<sup>th</sup> semester, studying Information Management.</i> Here, I am learning new subjects that are different from the ones I studied in school. Recently, I participated in an <i>industrial training</i> during the last semester break, which lasted for 2 months.</p>
+        <h4>2022 - Present</h4>
+    </div>
+</div>
+
+<map name="eleschMap">
+    <area shape="rect" coords="0,0,300,150" alt="Elementary" href="https://sites.google.com/moe-dl.edu.my/skseripristana">
+<map name="highschMap">
+    <area shape="rect" coords="0,0,300,150" alt="High School" href="https://sites.google.com/moe-dl.edu.my/smksierramas-rasmi/laman-utama">
+<map name="uniMap">
+    <area shape="rect" coords="0,0,300,150" alt="University" href="https://www.uitm.edu.my/index.php/en">
+</map>
+
+<div class="card" id="Table">
+    <center><h2 style="color:maroon;" class="top achievements-title">Top Achievements</h2></center>
+    <table>
+        <tr>
+            <th>Achievement</th>
+            <th>Year</th>
+            <th>Image</th> 
+        </tr>
+        <tr>
+            <td>Won 3<sup>rd</sup> place in Poetry Creation Competition for BM & BI Carnival at Gombak District Level</td>
+            <td>2021</td>
+            <td><img src="MyImages/sijil1.png" alt="Poetry Competition" style="width:100px; height:auto;"></td> 
+        </tr>
+        <tr>
+            <td>Won 1<sup>st</sup> place in Sierra Active Competition conducted online</td>
+            <td>2021</td>
+            <td><img src="MyImages/sijil2.jpeg" alt="Sierra Active Competition" style="width:100px; height:auto;"></td> 
+        </tr>
+        <tr>
+            <td>Won 1<sup>st</sup> place in the Integrated Sierra Sports Quiz conducted online</td>
+            <td>2021</td>
+            <td><img src="MyImages/sijil3.jpeg" alt="Sports Quiz" style="width:100px; height:auto;"></td> 
+        </tr>
+        <tr>
+            <td>Won 3rd place in Marching Drill Competition at the School Level</td>
+            <td>2019</td>
+            <td><img src="MyImages/sijil4.png" alt="Marching Drill" style="width:100px; height:auto;"></td> 
+        </tr>
+        <tr>
+            <td>Joined a competition in the State-Level Best Practices Carnival for SPBT Club-Runner-Up</td>
+            <td>2019</td>
+            <td><img src="MyImages/sijil5.jpeg" alt="State-Level Best Practices Carnival" style="width:100px; height:auto;"></td> 
+        </tr>
+        <tr>
+            <td>Won 3<sup>rd</sup> place in Design Innovation at the School Level</td>
+            <td>2018</td>
+            <td><img src="MyImages/sijil6.png" alt="Design Innovation" style="width:100px; height:auto;"></td> 
+        </tr>
+    </table>
+</div>
+
+
+<center><h2 style="color:maroon;" class="subjects-title">High School Subjects</h2></center>
+<table>
+    <tr>
+        <th>Year</th>
+        <th>Subject</th>
+        <th>Grade</th>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>English</td>
+        <td>A+</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Bahasa Melayu</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Pendidikan Islam</td>
+        <td>A+</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>History</td>
+        <td>A-</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Tasawwur</td>
+        <td>A+</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Mathematics</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Biology</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Chemistry</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Physics</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>Addmath</td>
+        <td>C</td>
+    </tr>
+</table>
+
+<div class="card" id="Media">
+<div class="gallery">
+    <h2>School Friends</h2> 
+    <img src="MyImages/fren1.jpg" alt="Friends Image 1">
+    <img src="MyImages/fren2.jpg" alt="Friends Image 2">
+    <img src="MyImages/fren3.jpg" alt="Friends Image 3">
+    <img src="MyImages/fren4.jpg" alt="Friends Image 4">
+    <img src="MyImages/fren5.jpg" alt="Friends Image 5">
+</div>
+
+<div class="video-section">
+    <div class="heading">
+        <span>Some videos on our latest reunion</span>
+        <hr>
+    </div>
+    <div class="videos">
+        <video controls>
+            <source src="MyVideos/frenvid1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls>
+            <source src="MyVideos/frenvid2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<div class="footer">
+   <p>&#169; 2024 Najiha. All rights reserved v<sub>1</sub>.</p>
+</div>
+
+</body>
+</html>
